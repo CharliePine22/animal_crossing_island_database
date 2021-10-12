@@ -219,7 +219,7 @@ def display_villager_info(villager_name):
 
 #   Main AC Title Image
 img1 = Image.open(
-    r"C:\Users\irush\Desktop\python projects\animal_crossing_database\ac_images\animal-crossing-new-horizons.jpg")
+    r"C:\Users\irush\Desktop\python projects\animal_crossing_database\ac_villager_images\ac_home_page.jfif")
 img1 = img1.resize((1000, 500), Image.ANTIALIAS)  # resize img
 main_img = ImageTk.PhotoImage(img1)
 label1 = tkinter.Label(image=main_img)
@@ -665,3 +665,4 @@ current_island_info.place(x=display_width * (1 / 7), y=900)
 play()
 root.attributes("-fullscreen", True)
 root.mainloop()
+
