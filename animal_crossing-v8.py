@@ -53,13 +53,14 @@ all_villager_catchphrases = []
 types_of_hobbies = ['Nature', 'Fitness', 'Play', 'Education', 'Fashion', 'Music', 'Nature']
 all_villager_hobbies = []
 
+
 #   Path of AC Webpage
-with open(r"C:/Users/irush/Desktop/ac_villager_list.html", 'r', encoding='UTF-8') as f:
+with open(r"C:\Users\irush\Desktop\python projects\animal_crossing_database\ac_villager_list.html", 'r', encoding='UTF-8') as f:
     page = f.read()
 
 #   Loop through image files
 for filename in glob.iglob(
-        r"C:\Users\irush\Desktop\python projects\animal_crossing_database\ac_villager_images" + '**/*.png',
+        "\ac_villager_images" + '**/*.png',
         recursive=True):
     #   Resize all the images in the folder to be the same size
     img = Image.open(filename)
@@ -148,7 +149,7 @@ def display_villager_info(villager_name):
 
         #   Open file path and display image
         villager_img_path = Image.open(
-            r'C:\Users\irush\Desktop\python projects\animal_crossing_database\ac_villager_images\{}.png'.format(
+            r'\ac_villager_images\{}.png'.format(
                 str(villager)))
         villager_img = ImageTk.PhotoImage(villager_img_path)
 
@@ -218,8 +219,7 @@ def display_villager_info(villager_name):
 
 
 #   Main AC Title Image
-img1 = Image.open(
-    r"C:\Users\irush\Desktop\python projects\animal_crossing_database\ac_villager_images\ac_home_page.jfif")
+img1 = Image.open("ac_villager_images\ac_home_page.jfif")
 img1 = img1.resize((1000, 500), Image.ANTIALIAS)  # resize img
 main_img = ImageTk.PhotoImage(img1)
 label1 = tkinter.Label(image=main_img)
@@ -241,16 +241,14 @@ E.place(x=845, y=815)
 E.bind("<Return>", (lambda event: display_villager_info(E.get())))
 
 #   Play music button
-play_button_img = Image.open(
-    r"C:\Users\irush\Desktop\animal_crossing_database\60-605815_play-button-icon-hd-png-download.png")
+play_button_img = Image.open(r"\play-button.png")
 play_button_img = play_button_img.resize((150, 100), Image.ANTIALIAS)
 play_img = ImageTk.PhotoImage(play_button_img)
 play_button = Button(root, text='Play', image=play_img, height=50, width=55, command=play)
 play_button.place(x=10, y=10)
 
 #   Stop music button
-stop_button_img = Image.open(
-    r"C:\Users\irush\Desktop\animal_crossing_database\182-1829954_small-red-stop-button-hd-png-download.png")
+stop_button_img = Image.open(r"\stop-button.png")
 stop_button_img = stop_button_img.resize((150, 100), Image.ANTIALIAS)
 stop_img = ImageTk.PhotoImage(stop_button_img)
 stop_button = Button(root, text='Play', image=stop_img, height=50, width=50, command=stop)
