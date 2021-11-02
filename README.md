@@ -8,7 +8,18 @@ An application that allows the user to search for a specific villager, filter th
 This project is currently still in development, User can search, filter, add, or remove villagers from their list. All of the pictures currently use absolute paths and need to be converted to relative paths. 
 
 ## Project Screen Shots
-[Will be added at a later date]
+
+### Home Page
+<img src="https://github.com/CharliePine22/animal_crossing_island_database/blob/main/ac-screenshot-1.png" alt="Home page of application" height='400' width="350"/>
+
+### All Villagers Page
+<img src="https://github.com/CharliePine22/animal_crossing_island_database/blob/main/ac-screenshot-2.png" alt="Home page of application" height='400' width="350"/>
+
+### Villager Page
+<img src="https://github.com/CharliePine22/animal_crossing_island_database/blob/main/ac-screenshot-3.png" alt="Home page of application" height='400' width="350"/>
+
+
+
 
 ## Installation and Setup Instructions
 
