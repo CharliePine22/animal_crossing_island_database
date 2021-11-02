@@ -1,6 +1,7 @@
 import tkinter
 import webbrowser
 import tkinter as tk
+import os
 from tkinter import *
 from PIL import ImageTk, Image
 from tkinter import ttk
@@ -148,9 +149,8 @@ def display_villager_info(villager_name):
         villager = villager_name.title()  # Data value from the input
 
         #   Open file path and display image
-        villager_img_path = Image.open(
-            r'\ac_villager_images\{}.png'.format(
-                str(villager)))
+        villager_img_filename = os.path.join(os.path.dirname(__file__), "ac_villager_images/{}.png".format(str(villager)))
+        villager_img_path = Image.open(villager_img_filename)
         villager_img = ImageTk.PhotoImage(villager_img_path)
 
     except FileNotFoundError:
@@ -219,7 +219,8 @@ def display_villager_info(villager_name):
 
 
 #   Main AC Title Image
-img1 = Image.open("ac_villager_images\ac_home_page.jfif")
+filename = os.path.join(os.path.dirname(__file__), "ac_villager_images/ac_home_page.jfif")
+img1 = Image.open(filename)
 img1 = img1.resize((1000, 500), Image.ANTIALIAS)  # resize img
 main_img = ImageTk.PhotoImage(img1)
 label1 = tkinter.Label(image=main_img)
@@ -241,14 +242,16 @@ E.place(x=845, y=815)
 E.bind("<Return>", (lambda event: display_villager_info(E.get())))
 
 #   Play music button
-play_button_img = Image.open(r"\play-button.png")
+play_button_file = os.path.join(os.path.dirname(__file__), "play-button.png")
+play_button_img = Image.open(play_button_file)
 play_button_img = play_button_img.resize((150, 100), Image.ANTIALIAS)
 play_img = ImageTk.PhotoImage(play_button_img)
 play_button = Button(root, text='Play', image=play_img, height=50, width=55, command=play)
 play_button.place(x=10, y=10)
 
 #   Stop music button
-stop_button_img = Image.open(r"\stop-button.png")
+stop_button_file = os.path.join(os.path.dirname(__file__), "stop-button.png")
+stop_button_img = Image.open(stop_button_file)
 stop_button_img = stop_button_img.resize((150, 100), Image.ANTIALIAS)
 stop_img = ImageTk.PhotoImage(stop_button_img)
 stop_button = Button(root, text='Play', image=stop_img, height=50, width=50, command=stop)
@@ -579,6 +582,7 @@ def add_villager():
 
     #   Commit to database
     try:
+        print(data_to_insert)
         cur.execute(postgrest_insert_query, data_to_insert)
 
         if data_to_insert[0] in island_data():
