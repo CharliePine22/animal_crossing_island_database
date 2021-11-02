@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 import tkinter
 import webbrowser
 import tkinter as tk
